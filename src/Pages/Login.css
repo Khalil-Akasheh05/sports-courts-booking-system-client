@@ -1,0 +1,190 @@
+/* Custom Green Theme Variables */
+:root {
+  --modal-bg: rgba(10, 17, 11, 0.9); /* Deep Forest with transparency */
+  --input-bg: #050a06; /* Darkest green for inputs */
+  --accent-neon: #00ff87; /* Signature neon green */
+  --text-main: #ffffff;
+}
+
+/* =========================
+   PAGE WRAPPER
+========================= */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* Cinematic dark overlay on your basketball background */
+  background-image: linear-gradient(rgba(3, 7, 4, 0.7), rgba(3, 7, 4, 0.8)),
+    url("../assets/Login-page-background-image.jpg");
+  background-size: cover;
+  background-position: center;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+}
+
+/* Page Main Title (Top) */
+.login-page h1 {
+  color: var(--text-main);
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* =========================
+   LOGIN CONTAINER (THE CARD)
+========================= */
+.login-container {
+  background: var(--modal-bg) !important;
+  backdrop-filter: blur(15px);
+  width: 480px; /* Standard wireframe width */
+  padding: 50px 60px;
+  border: 1px solid rgba(0, 255, 135, 0.2);
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  animation: slideFadeIn 0.8s ease-out;
+}
+
+.login-container h2 {
+  font-size: 30px;
+  margin-bottom: 35px;
+  font-weight: 700;
+  color: var(--text-main);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* =========================
+   FORM GROUPS & INPUTS
+========================= */
+.form-group {
+  text-align: left;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Tight gap between label and input like wireframe */
+}
+
+/* Label Aligned to Left */
+.form-group label {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--accent-neon);
+  margin-left: 2px;
+}
+
+/* Wrapper to hold Input + Icon */
+.login-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.login-input-wrapper input {
+  width: 100%;
+  height: 52px;
+  padding: 0 45px 0 15px; /* 45px padding on right so text doesn't hit icon */
+  background: var(--input-bg) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  font-size: 16px;
+  color: white !important;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* Input Focus Effect */
+.login-input-wrapper input:focus {
+  outline: none;
+  border-color: var(--accent-neon);
+  box-shadow: 0 0 12px rgba(0, 255, 135, 0.15);
+}
+
+/* Icon locked INSIDE the input on the right */
+.login-input-wrapper i {
+  position: absolute;
+  right: 15px;
+  color: var(--accent-neon);
+  opacity: 0.9;
+  font-size: 1.2rem;
+  pointer-events: none; /* Clicking icon focuses the input */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================
+   BUTTON & LINKS
+========================= */
+button {
+  width: 100%;
+  padding: 15px;
+  background-color: var(--accent-neon) !important;
+  color: #030704 !important;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  margin-top: 15px;
+  font-size: 17px;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #00e67a !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 255, 135, 0.3);
+}
+
+.login-container p {
+  margin-top: 25px;
+  font-size: 15px;
+  color: #9ca3af;
+}
+
+.login-container p a {
+  color: var(--accent-neon);
+  margin-left: 8px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.login-container p a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+@keyframes slideFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 550px) {
+  .login-container {
+    width: 90%;
+    padding: 40px 30px;
+  }
+  .login-page h1 {
+    font-size: 28px;
+    text-align: center;
+  }
+}
