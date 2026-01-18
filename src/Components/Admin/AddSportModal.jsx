@@ -1,4 +1,4 @@
-import "./css/AddSport.css";
+import "./css/AddSportModal.css";
 import { useState } from "react";
 import api from "../../api/axios";
 function AddSportModal({ onClose }) {

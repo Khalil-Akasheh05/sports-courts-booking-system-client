@@ -1,6 +1,5 @@
 import { useState } from "react";
-import AddCourt from "./AddCourtModal";
-import "./css/ChooseSportCard.css";
+import "./css/ChooseSportModal.css";
 import { useEffect } from "react";
 import api from "../../api/axios";
 function ChooseSportModal({ onClose, onAddCourt, onSelect }) {

@@ -1,4 +1,4 @@
-import "./css/EditCourtCard.css";
+import "./css/EditCourtCardModal.css";
 import api from "../../api/axios";
 import { useState } from "react";
 function EditCourtModal({ court, onClose, onCourtUpdated }) {

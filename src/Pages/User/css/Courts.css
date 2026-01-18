@@ -1,0 +1,46 @@
+/* Custom Green Theme Variables */
+:root {
+  --accent-neon: #00ff87;   /* The signature neon green */
+  --text-main: #ffffff;     /* Bright white for titles */
+  --text-dim: #9ca3af;      /* Muted gray-green for subtitles */
+}
+
+/* =========================
+   COURTS PAGE WRAPPER
+========================= */
+
+.courts-page {
+  width: 100%;
+  padding: 120px 0 140px; /* Space for the Sticky Navbar */
+  text-align: center;
+  
+  /* Smooth entry animation */
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* Page Title - High Contrast */
+.courts-page h1 {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: var(--text-main) !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Subtitle - Professional Gray-Green */
+.courts-page p {
+  font-size: 18px;
+  color: var(--text-dim) !important;
+  margin-bottom: 40px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .courts-page h1 {
+    font-size: 32px;
+  }
+}

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./css/AddCourt.css";
+import "./css/AddCourtModal.css";
 import api from "../../api/axios";
 import { useParams } from "react-router";
 function AddCourtModal({id, onClose}) {

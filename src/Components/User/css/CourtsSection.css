@@ -1,0 +1,23 @@
+/* =========================
+   CARDS GRID (4 IN A ROW)
+========================= */
+.courts-container {
+  width: 100%;
+  max-width: 1400px;
+  display: grid;
+  margin: 0 auto;
+  /* Exactly 4 equal columns */
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 30px;
+  justify-items: center;
+  padding: 15px 15px;
+  /* background-color: #0a150e; */
+  border-radius: 20px;
+}
+
+/* Responsive adjustment */
+@media (max-width: 1200px) {
+  .courts-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

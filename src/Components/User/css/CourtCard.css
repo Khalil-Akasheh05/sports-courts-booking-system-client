@@ -1,0 +1,132 @@
+/* Custom Green Theme Variables */
+:root {
+  --card-bg: #0a110b;       /* Deep Forest Green-Black */
+  --accent-neon: #00ff87;   /* The signature neon green */
+  --text-main: #e0e6e1;     /* Soft white */
+  --border-light: rgba(255, 255, 255, 0.05);
+}
+
+.court-card {
+  /* DARK THEME TRANSFORMATION */
+  background-color: var(--card-bg) !important;
+  border: 1px solid var(--border-light);
+  border-radius: 22px;
+  padding: 24px 24px 30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  /* Deep shadow to match the Arena background */
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6);
+
+  /* Using a smooth "pop" transition */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Court Image */
+.court-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 22px;
+  
+  /* Slightly darker to focus on the content */
+  filter: brightness(0.85);
+  transition: filter 0.3s ease;
+}
+
+/* Court Number and Type Text */
+.court-number {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px; /* Added more space before button */
+  color: var(--text-main) !important;
+  letter-spacing: 0.5px;
+}
+
+/* "Book Court" Button - Neon Action */
+.court-card button {
+  width: 100% !important;
+  padding: 14px 0 !important;
+  border: none !important;
+  border-radius: 12px !important;
+
+  /* Matches your branding */
+  background-color: var(--accent-neon) !important;
+  color: #030704; /* Dark text on bright button */
+
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  cursor: pointer !important;
+
+  transition: all 0.3s ease !important;
+}
+
+.court-card button:hover {
+  background-color: #00e67a !important;
+  transform: scale(1.02);
+  /* Added a neon glow effect on hover */
+  box-shadow: 0 0 20px rgba(0, 255, 135, 0.4);
+}
+
+/* Card Hover Animation */
+.court-card:hover {
+  transform: translateY(-12px);
+  border-color: rgba(0, 255, 135, 0.3); /* Border glows green */
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.8);
+}
+
+.court-card:hover img {
+  filter: brightness(1); /* Lights up the field when you hover */
+}
+
+/* ===== PRICE (REFINED & BALANCED) ===== */
+.court-price {
+  margin: 18px 0 26px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+/* Price number (still important, but calmer) */
+.price-amount {
+  font-size: 21px;          /* ⬇️ reduced from 30px */
+  font-weight: 700;
+  color: var(--accent-neon);
+  padding-right: 7px;
+}
+
+/* Currency + unit (same style) */
+.price-meta {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(224, 230, 225, 0.75);
+}
+
+
+/* .court-card .delete-courts-btn {
+  width: 100% !important;
+  max-width: 180px !important;
+  padding: 12px 0 !important;
+  background-color: transparent !important;
+  color: #ff4d4d !important; 
+  border: 1px solid #ff4d4d !important;
+  border-radius: 10px !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+}
+
+.court-card .delete-courts-btn:hover {
+  background-color: #ff4d4d !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 20px rgba(255, 77, 77, 0.3) !important;
+} */
