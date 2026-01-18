@@ -1,0 +1,169 @@
+/* Custom Green Theme Variables */
+:root {
+  --card-bg: #0a110b; /* Deep Forest Green-Black */
+  --accent-neon: #00ff87; /* Neon green for Edit */
+  --danger-red: #ff4d4d; /* Stadium Red for Delete */
+  --text-main: #ffffff;
+  --text-dim: #9ca3af;
+}
+
+.myBooking-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto 30px;
+
+  display: flex;
+  align-items: center;
+  gap: 32px;
+
+  padding: 24px 26px;
+  background-color: var(--card-bg) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 22px;
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.myBooking-container:hover {
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+  border-color: rgba(0, 255, 135, 0.2);
+  transform: translateY(-4px);
+}
+
+/* =========================
+   IMAGE
+========================= */
+.myBooking-container .booking-image {
+  width: 220px;
+  height: 180px; 
+  border-radius: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.myBooking-container .booking-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.8);
+  transition: filter 0.3s ease;
+}
+
+.myBooking-container:hover .booking-image img {
+  filter: brightness(1);
+}
+
+/* =========================
+   INFO - UPDATED FOR BETTER BREATHING ROOM
+========================= */
+.myBooking-container .booking-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  /* Increased gap for vertical separation */
+  gap: 14px; 
+  align-self: center;
+  /* Fixed the line-height from 1. to 1.5 */
+  line-height: 1.5; 
+  width: 100% !important;
+}
+
+.myBooking-container .sport-name {
+  font-size: 20px !important;
+  font-weight: 800; /* Bolder for hierarchy */
+  color: var(--accent-neon) !important; /* Matches image 2 style */
+  letter-spacing: 1px; /* More modern, airy feel */
+  text-transform: uppercase;
+  margin-bottom: 4px; 
+}
+
+.myBooking-container .court-price {
+  font-size: 18px;
+  color: var(--text-dim) !important;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px; /* Adds space before Date/Time */
+}
+
+.myBooking-container .date,
+.myBooking-container .time {
+  font-size: 17px;
+  color: var(--text-main) !important; /* Brighter for readability */
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.myBooking-container .buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
+  margin-left: auto;
+  align-items: flex-end;
+  flex: 0 0 auto;
+  width: fit-content;
+  margin-right: 15px;
+}
+
+.myBooking-container .buttons-container button {
+  width: 175px;
+  padding: 14px 0; /* Slightly taller buttons */
+  border-radius: 12px;
+  border: none;
+
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  cursor: pointer;
+
+  background-color: var(--accent-neon) !important;
+  color: #030704 !important;
+
+  transition: all 0.3s ease;
+}
+
+.myBooking-container .buttons-container button:hover {
+  background-color: #00e67a !important;
+  transform: scale(1.03);
+  box-shadow: 0 0 15px rgba(0, 255, 135, 0.3);
+}
+
+.myBooking-container .buttons-container button:last-child {
+  background-color: transparent !important;
+  color: var(--danger-red) !important;
+  border: 1px solid var(--danger-red) !important;
+}
+
+.myBooking-container .buttons-container button:last-child:hover {
+  background-color: var(--danger-red) !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 20px rgba(255, 77, 77, 0.3) !important;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .myBooking-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+  }
+  .myBooking-container .buttons-container {
+    width: 100%;
+    flex-direction: row;
+    margin-left: 0;
+    align-items: center;
+  }
+  .myBooking-container .buttons-container button {
+    flex: 1;
+  }
+}

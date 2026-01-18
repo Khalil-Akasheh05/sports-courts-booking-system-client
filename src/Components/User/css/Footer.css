@@ -1,0 +1,96 @@
+/* Using consistent variables */
+:root {
+  --footer-bg: #030704;     /* Deep green-black grounding */
+  --accent-neon: #00ff87;   /* Neon green from your arrows */
+  --text-muted: #9ca3af;
+  --text-bright: #e0e6e1;
+}
+
+footer {
+  width: 100%;
+  /* Make the footer a solid, slightly different black to create a 'cut' */
+  background-color: #010402 !important; 
+  
+  /* This bright green line will clearly separate it from the main background */
+  border-top: 1px solid rgba(0, 255, 134, 0.15); 
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 80px;
+  
+  /* Add a slight shadow that pushes UP onto the main content */
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Copyright text */
+.copyright p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+
+/* Centered Navigation Links */
+.quick-links {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.quick-links-list {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.quick-links-list li {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase; /* Matching headers */
+  letter-spacing: 0.8px;
+}
+
+/* Hover: subtle change to bright white/green */
+.quick-links-list li:hover {
+  color: var(--accent-neon);
+}
+
+/* Social icons with Neon Glow */
+.social-media-links {
+  display: flex;
+  gap: 30px;
+}
+
+.social-media-links i {
+  font-size: 22px;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Pop and Glow hover effect */
+.social-media-links i:hover {
+  color: var(--accent-neon);
+  transform: translateY(-5px) scale(1.1);
+  filter: drop-shadow(0 0 8px rgba(0, 255, 135, 0.4));
+}
+
+/* Responsive fix for Mobile */
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  .quick-links-list {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
