@@ -1,0 +1,129 @@
+/* Custom Green Theme Variables */
+:root {
+  --modal-bg: rgba(10, 17, 11, 0.92); 
+  --input-bg: #050a06; 
+  --accent-neon: #00ff87; 
+  --text-main: #ffffff;
+}
+
+.signup-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Matching the cinematic overlay from Login */
+  background-image: linear-gradient(rgba(3, 7, 4, 0.75), rgba(3, 7, 4, 0.85)),
+    url("../assets/Login-page-background-image.jpg");
+  background-size: cover;
+  background-position: center;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Glassmorphism Container */
+.signup-container {
+  background: var(--modal-bg) !important;
+  backdrop-filter: blur(15px);
+  width: 500px;
+  padding: 40px 60px 50px; /* Extra bottom padding for "breathing room" */
+  border: 1px solid rgba(0, 255, 135, 0.3);
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  animation: slideFadeIn 0.8s ease-out;
+}
+
+.signup-container h2 {
+  font-size: 32px;
+  margin-bottom: 25px;
+  font-weight: 700;
+  color: var(--text-main);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* --- FIELD ALIGNMENT FIX --- */
+
+.signup-input-wrapper {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Aligns label and input perfectly to the left */
+  gap: 8px;
+  margin-bottom: 22px;
+  width: 100%;
+}
+
+.signup-container label {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--accent-neon);
+  padding-left: 2px;
+}
+
+.signup-container input {
+  width: 100%;
+  height: 50px;
+  padding: 0 15px;
+  background: var(--input-bg) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  font-size: 16px;
+  color: white !important;
+  box-sizing: border-box; /* Ensures width includes padding */
+  transition: all 0.3s ease;
+}
+
+.signup-container input:focus {
+  outline: none;
+  border-color: var(--accent-neon);
+  box-shadow: 0 0 10px rgba(0, 255, 135, 0.2);
+}
+
+/* --- BUTTON & LINK --- */
+
+.signup-container button {
+  width: 100%;
+  padding: 15px;
+  background-color: var(--accent-neon) !important;
+  color: #030704 !important; /* Dark text on neon for high contrast */
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 15px;
+  font-size: 17px;
+  transition: all 0.3s ease;
+}
+
+.signup-container button:hover {
+  background-color: #00e67a !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 255, 135, 0.4);
+}
+
+.signup-container p {
+  margin-top: 25px;
+  font-size: 15px;
+  color: #9ca3af;
+}
+
+.signup-container p a {
+  color: var(--accent-neon);
+  font-weight: 700;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.signup-container p a:hover {
+  text-decoration: underline;
+}
+
+/* Entrance Animation */
+@keyframes slideFadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
