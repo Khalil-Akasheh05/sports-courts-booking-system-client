@@ -1,0 +1,122 @@
+/* Custom Green Theme Variables */
+:root {
+  --deep-bg: #030704;       /* Even darker green-black for the section */
+  --card-dark: #0a110b;     /* The main container background */
+  --accent-neon: #00ff87;   /* The bright green from your arrow */
+  --text-muted: #9ca3af;
+}
+
+/* Section wrapper */
+.explore-section {
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 90px 0;
+  width: 90%; /* Widened slightly for a more cinematic feel */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* Section title */
+.explore-section h2 {
+  margin-bottom: 45px;
+  font-size: 34px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-transform: uppercase; /* Makes it feel like a sports broadcast */
+}
+
+/* Big rounded box */
+.explore-sports-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px; /* Reduced gap for a tighter look */
+  width: 100%;
+  padding: 40px;
+
+  /* DARKER GREEN-BLACK CARD */
+  background-color: var(--card-dark);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.05); /* Soft border to define the edge */
+
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8);
+}
+
+/* Each sport card */
+.sport-container {
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Sport image */
+.sport-container img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+  
+  /* Dimming effect to make it less "bright" */
+  filter: brightness(0.7) contrast(1.1) saturate(0.8); 
+  
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Image Hover - Brightens slightly and pops */
+.sport-container:hover img {
+  filter: brightness(1) contrast(1.1) saturate(1);
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 255, 135, 0.2); /* Soft green glow on hover */
+}
+
+/* Sport name */
+.sport-container h5 {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: color 0.3s ease;
+}
+
+.sport-container:hover h5 {
+  color: var(--accent-neon); /* Text turns green on hover */
+}
+
+/* View All container */
+.view-all-container {
+  min-width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-neon);
+  transition: all 0.3s ease;
+}
+
+.view-all-container:hover {
+  transform: translateX(10px);
+  filter: drop-shadow(0 0 8px var(--accent-neon)); /* Adds a glow to the arrow */
+}
+
+/* Arrow icon */
+.view-all-container i {
+  font-size: 35px;
+  margin-bottom: 8px;
+}
+
+/* View all text */
+.view-all-container p {
+  font-size: 14px;
+  margin: 0;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Link reset */
+.view-all-container a {
+  text-decoration: none;
+  color: inherit;
+}

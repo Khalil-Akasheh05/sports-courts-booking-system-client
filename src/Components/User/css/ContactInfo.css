@@ -1,0 +1,88 @@
+/* Custom Green Theme Variables */
+:root {
+  --deep-bg: #030704;       /* Darkest green-black */
+  --card-dark: #0a110b;     /* Deep forest card background */
+  --accent-neon: #00ff87;   /* The bright green accent */
+  --text-main: #e0e6e1;     /* Soft off-white */
+}
+
+.contactInfo-container {
+  margin: 130px auto 140px;
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 70px;
+  /* Thin divider consistent with Navbar and About sections */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  animation: fadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Section title */
+.contactInfo-container h2 {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 36px;
+  color: #ffffff;
+  letter-spacing: 1.2px;
+  text-transform: uppercase; /* Matching the stadium brand */
+}
+
+/* Info box */
+.contactInfo {
+  width: 85%;
+  max-width: 1000px;
+  padding: 60px 80px;
+  border-radius: 30px;
+
+  /* Updated to match your new Dark Green palette */
+  background-color: var(--card-dark);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+
+  box-shadow: 
+    0 40px 100px rgba(0, 0, 0, 0.8),
+    inset 0 0 15px rgba(0, 255, 135, 0.03); /* Extremely faint inner green glow */
+
+  animation: fadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.2s;
+}
+
+/* Text Styling */
+.contactInfo p {
+  font-size: 19px;
+  line-height: 1.9;
+  margin: 14px 0;
+  color: var(--text-main);
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+/* Make the actual email and phone pop with green on hover */
+.contactInfo p:hover {
+  color: var(--accent-neon);
+  cursor: default;
+}
+
+/* Animation refinement */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .contactInfo {
+    padding: 40px 30px;
+    width: 95%;
+  }
+  .contactInfo p {
+    font-size: 16px;
+  }
+}

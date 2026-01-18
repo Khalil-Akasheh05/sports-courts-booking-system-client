@@ -1,0 +1,92 @@
+/* Using the same color palette for consistency */
+:root {
+  --deep-bg: #030704;       /* Darkest green-black */
+  --card-dark: #0a110b;     /* Deep Forest card background */
+  --accent-neon: #00ff87;   /* Neon green accent */
+  --text-main: #e0e6e1;     /* Soft off-white */
+  --text-dim: #9ca3af;      /* Muted gray-green */
+}
+
+/* About Us section wrapper */
+.aboutUs-container {
+  margin: 100px auto 120px;
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 70px;
+  /* Thin divider matching the rest of the site */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  animation: fadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* About Us title */
+.aboutUs-container h2 {
+  margin-bottom: 40px;
+  font-size: 34px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1.2px;
+  text-transform: uppercase; /* Stadium/Sporty feel */
+}
+
+/* About Us content box */
+.aboutUs-info {
+  width: 85%;
+  max-width: 1000px;
+  padding: 60px 80px;
+  border-radius: 30px;
+
+  /* Deep Green-Black Card */
+  background-color: var(--card-dark);
+  
+  /* Subtle border and outer glow instead of a heavy drop shadow */
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  box-shadow: 
+    0 40px 100px rgba(0, 0, 0, 0.8),
+    inset 0 0 20px rgba(0, 255, 135, 0.02); /* Very faint green inner glow */
+
+  animation: fadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.2s;
+}
+
+/* About Us text */
+.aboutUs-info p {
+  font-size: 19px;
+  line-height: 2; /* Increased for better readability */
+  margin: 0;
+  color: var(--text-main);
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+/* Highlighted break for better flow */
+.aboutUs-info p br {
+  margin-bottom: 15px;
+  display: block;
+  content: "";
+}
+
+/* Animation refinement */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive fix for smaller screens */
+@media (max-width: 768px) {
+  .aboutUs-info {
+    padding: 30px 25px;
+    width: 95%;
+  }
+  .aboutUs-info p {
+    font-size: 17px;
+  }
+}
