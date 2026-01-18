@@ -1,0 +1,47 @@
+/* Custom Green Theme Variables */
+:root {
+  --accent-neon: #00ff87;   /* The signature neon green */
+  --text-main: #ffffff;     /* Bright white for titles */
+  --text-dim: #9ca3af;      /* Muted gray-green for subtitles */
+}
+
+/* =========================
+   SPORTS PAGE WRAPPER
+========================= */
+
+.sports-page {
+  width: 100%;
+  padding: 120px 0 140px; /* Increased top padding to account for Sticky Nav */
+  text-align: center;
+  
+  /* Ensuring the page feels deep and immersive */
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* Page Title - Now Pop and Sporty */
+.sports-page h1 {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: var(--text-main) !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  /* Subtle glow to the main header */
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Subtitle - Softened so it doesn't fight with the Title */
+.sports-page p {
+  font-size: 18px;
+  color: var(--text-dim) !important;
+  margin-bottom: 35px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .sports-page h1 {
+    font-size: 32px;
+  }
+}
