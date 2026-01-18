@@ -1,0 +1,15 @@
+/* =========================
+   LIST CONTAINER
+========================= */
+.all-bookings-container {
+  width: 100%;
+  max-width: 1000px; /* Same width as your BookingCard max-width */
+  display: flex;
+  flex-direction: column; /* Stacks cards vertically */
+  gap: 25px; 
+  
+  /* CRITICAL: stretch prevents the cards from collapsing. 
+     This keeps the image on the left and text on the right. */
+  align-items: stretch; 
+  margin: 0 auto;
+}

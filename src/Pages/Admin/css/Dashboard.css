@@ -1,0 +1,41 @@
+.admin-dashbaord-page {
+  background-color: #0d0f0c !important; /* Deep forest-black base */
+  min-height: 100vh;
+  padding: 100px 40px 60px;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  box-sizing: border-box;
+}
+
+.dashboard-header {
+  margin-bottom: 50px !important;
+  text-align: center;
+}
+
+.dashboard-header h1 {
+  font-size: 42px !important;
+  font-weight: 900 !important;
+  color: #ffffff !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 5px !important;
+}
+
+.dashboard-header .subtitle {
+  color: #9ca3af !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.dashboard-main-content {
+  display: grid !important;
+  grid-template-columns: 1.8fr 1fr !important; /* Table vs Sidebar proportions */
+  gap: 25px !important;
+  width: 100% !important;
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+  align-items: start !important;
+}

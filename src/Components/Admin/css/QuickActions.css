@@ -1,0 +1,36 @@
+.quick-actions {
+  background: #1a1c18 !important;
+  padding: 30px !important;
+  border-radius: 18px !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+.quick-actions h2 {
+  color: #ffffff !important;
+  font-size: 22px !important;
+  font-weight: 800 !important;
+  margin-bottom: 25px !important;
+  text-align: left !important;
+}
+
+/* Quick Actions Sidebar */
+.quick-actions button {
+  width: 100%;
+  padding: 16px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border: none;
+  background-color: #00ff87 !important; /* Consistent application green */
+  color: #000000 !important;
+  font-weight: 800 !important;
+  text-transform: uppercase;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quick-actions button:hover {
+  transform: scale(1.02);
+  filter: brightness(1.1);
+}

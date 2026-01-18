@@ -1,0 +1,249 @@
+/* ===== MODAL THEME VARIABLES ===== */
+:root {
+  --modal-bg: rgba(10, 17, 11, 0.95);
+  --input-bg: #050a06;
+  --accent-neon: #00ff87;
+  --text-main: #ffffff;
+  --text-dim: #9ca3af;
+}
+
+/* =========================
+   EDIT COURT POPUP
+========================= */
+
+.manage-court-container {
+  background: var(--modal-bg);
+  backdrop-filter: blur(15px);
+  width: 420px;
+  border-radius: 30px;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  border: 1px solid rgba(0, 255, 135, 0.2);
+  box-shadow: 0 50px 100px rgba(0, 0, 0, 0.9);
+  z-index: 2000;
+
+  overflow: hidden;
+  animation: popupIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* =========================
+   CLOSE ICON
+========================= */
+
+.manage-court-container i {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.manage-court-container i:hover {
+  background: #ff4d4d;
+  border-color: #ff4d4d;
+  transform: rotate(90deg);
+}
+
+/* =========================
+   IMAGE & TITLE
+========================= */
+
+.manage-court-container img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+
+.manage-court-container p {
+  padding: 0 26px;
+  margin: 20px 0 10px;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-main);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   FORM SECTION
+========================= */
+
+.form-section {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* =========================
+   INPUT GROUPS
+========================= */
+
+.input-wrapper {
+  padding: 0 30px;
+  margin-top: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-wrapper label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent-neon);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.input-wrapper input {
+  width: 100%;
+  height: 50px;
+  padding: 0 15px;
+  font-size: 16px;
+
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  outline: none;
+
+  background: var(--input-bg);
+  color: white;
+
+  transition: border-color 0.3s ease;
+}
+
+.input-wrapper input:focus {
+  border-color: var(--accent-neon);
+  box-shadow: 0 0 10px rgba(0, 255, 135, 0.1);
+}
+
+/* =========================
+   SAVE BUTTON
+========================= */
+
+.manage-court-container button {
+  margin: 30px 30px 40px;
+  width: calc(100% - 60px);
+  height: 55px;
+
+  background: var(--accent-neon);
+  color: #030704;
+
+  border: none;
+  border-radius: 14px;
+
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.manage-court-container button:hover {
+  background-color: #00e67a;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 255, 135, 0.3);
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes popupIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -45%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.price-field {
+  position: relative;
+}
+
+.price-input {
+  width: 100%;
+  height: 50px;
+  padding: 0 110px 0 15px; /* space for suffix */
+}
+
+.price-suffix {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  color: rgba(224, 230, 225, 0.6);
+  pointer-events: none; /* user can still click input */
+}
+
+/* Optional polish */
+.price-input:focus + .price-suffix {
+  color: var(--accent-neon);
+}
+
+
+.manage-court-container .disable-btn {
+  background-color: transparent !important;
+  color: #ff4d4d !important; /* Stadium Red */
+  border: 1px solid #ff4d4d !important;
+}
+
+.manage-court-container .disable-btn:hover {
+  background-color: #ff4d4d !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 20px rgba(255, 77, 77, 0.3) !important;
+}
+
+.manage-court-container .save-btn{
+  margin: 28px 30px 19px;
+}
+
+.manage-court-container .disable-btn{
+  margin: 0 30px 40px;
+}
+
+.manage-court-container .enable-btn {
+  background-color: transparent !important;
+  color: var(--accent-neon) !important;
+  border: 1px solid var(--accent-neon) !important;
+}
+
+.manage-court-container .enable-btn:hover {
+  background-color: var(--accent-neon) !important;
+  color: #030704 !important;
+  box-shadow: 0 0 20px rgba(0, 255, 135, 0.35) !important;
+}
+
+/* spacing like disable */
+.manage-court-container .enable-btn {
+  margin: 0 30px 40px;
+}

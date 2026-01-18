@@ -1,0 +1,81 @@
+/* =========================
+   COURT CARD CONTAINER
+========================= */
+.court-card {
+  position: relative;
+  background-color: #0a110b; /* Deep "Arena" Forest Green */
+  border-radius: 20px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.court-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  border-color: rgba(0, 255, 135, 0.2);
+}
+
+/* =========================
+   IMAGE STYLING
+========================= */
+.court-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  filter: brightness(0.8); /* Matches the moody dashboard look */
+}
+
+/* =========================
+   TEXT (COURT NUMBER & TYPE)
+========================= */
+.court-card p {
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 0 0 25px 0; /* Space between text and button */
+  text-align: center;
+}
+
+/* Disabled icon */
+.disable-icon {
+  position: absolute;
+  top: 5px;
+  right: 17px;
+  font-size: 18px;
+  color: #ff4d4d; /* red ban icon */
+  /* background: rgba(0, 0, 0, 0.6); */
+  padding: 8px;
+  border-radius: 50%;
+  z-index: 5;
+}
+
+.buttons-container{
+  width: 100%;
+}
+
+.court-card .buttons-container button{
+  width: 100% !important;
+}
+
+.court-card .buttons-container .delete-courts-btn{
+  width: 100% !important;
+    background-color: transparent !important;
+  color: var(--danger-red) !important;
+  border: 1px solid var(--danger-red) !important;
+}
+
+.court-card .buttons-container .delete-courts-btn:hover{
+  background-color: var(--danger-red) !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 20px rgba(255, 77, 77, 0.3) !important;
+}

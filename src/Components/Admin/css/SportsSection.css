@@ -1,0 +1,20 @@
+/* =========================
+   CARDS GRID (4 IN A ROW)
+========================= */
+.manage-sports-container {
+  width: 100%;
+  max-width: 1400px;
+  display: grid;
+  /* Exactly 4 equal columns */
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 30px;
+  justify-items: center;
+  padding: 20px 0;
+}
+
+/* Responsive adjustment */
+@media (max-width: 1200px) {
+  .manage-sports-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,0 +1,48 @@
+.bookings-page {
+  width: 100%;
+  min-height: 100vh;
+  /* Adjust padding to clear your Navbar */
+  padding: 120px 20px 80px; 
+  background-color: transparent !important;
+  display: flex;
+  flex-direction: column;
+  /* This centers the H1 and Subtitle */
+  align-items: center; 
+  box-sizing: border-box;
+}
+
+/* =========================
+   PAGE TITLES
+========================= */
+.bookings-header h1 {
+  font-size: 42px;
+  font-weight: 800;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 25px 0 10px 0;
+  text-align: center;
+}
+
+.bookings-header p {
+  font-size: 16px;
+  font-weight: 700;
+  color: #00ff87; /* Neon Green */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0 0 60px 0;
+  text-align: center;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px){
+  .all-bookings-page {
+    padding: 80px 20px;
+  }
+  
+  .bookings-header h1 {
+    font-size: 32px;
+  }
+}

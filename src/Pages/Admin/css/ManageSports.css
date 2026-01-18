@@ -1,0 +1,76 @@
+/* =========================
+   PAGE WRAPPER
+========================= */
+.manage-sports-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 120px 60px 80px; 
+  background-color: transparent !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the header area and grid horizontally */
+  box-sizing: border-box;
+}
+
+/* =========================
+   HEADER SECTION (The Fix)
+========================= */
+.manage-sports-header {
+  width: 100%;
+  max-width: 1400px; /* Aligns with the width of your 4 cards */
+  display: flex;
+  justify-content: center; /* Keeps H1 in the dead center */
+  align-items: center;
+  position: relative; /* Anchor for the absolute button */
+  margin-bottom: 60px;
+}
+
+.manage-sports-header h1 {
+  font-size: 42px;
+  font-weight: 800;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+/* THE BUTTON FIX: Stops the stretching */
+.add-new-sport-btn {
+  position: absolute;
+  right: 0; /* Pins it to the right edge of the header container */
+  
+  /* Critical: Forces button to only be as wide as its text */
+  width: auto !important; 
+  white-space: nowrap; 
+  
+  background-color: var(--accent-neon) !important;
+  color: #030704 !important;
+  border: none !important;
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 10px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  margin-top: 40px;
+}
+
+.add-new-sport-btn:hover {
+  background-color: #00e67a !important;
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(0, 255, 135, 0.4);
+}
+
+@media (max-width: 1200px) {
+.manage-sports-header {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .add-new-sport-btn {
+    position: static; /* Stack normally on small screens */
+    transform: none;
+  }
+}

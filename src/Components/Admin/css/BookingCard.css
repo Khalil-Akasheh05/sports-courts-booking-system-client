@@ -1,0 +1,146 @@
+/* =========================
+   THEME VARIABLES
+========================= */
+:root {
+  --card-bg: #0a110b;       /* Deep Forest Green-Black */
+  --accent-neon: #00ff87;   /* Neon green accent */
+  --text-main: #ffffff;
+  --text-dim: #9ca3af;
+}
+
+/* =========================
+   BOOKING CARD CONTAINER
+========================= */
+.booking-container {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto 30px; /* Space between cards */
+  
+  /* INCREASED HEIGHT: Large vertical padding creates a taller, premium look */
+  padding: 40px 35px; 
+  
+  background-color: var(--card-bg) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 28px; /* High rounding from user dashboard style */
+  
+  /* Wide gap between image and text stack */
+  gap: 50px; 
+  
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  box-sizing: border-box;
+}
+
+/* Lift effect on hover from user CSS */
+.booking-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+  border-color: rgba(0, 255, 135, 0.2);
+}
+
+/* =========================
+   IMAGE SECTION
+========================= */
+.booking-image {
+  /* Taller and wider image to match the increased card height */
+  width: 280px;
+  height: 200px; 
+  flex-shrink: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.booking-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.8); /* Keeping it atmospheric */
+  transition: filter 0.3s ease;
+}
+
+.booking-container:hover .booking-image img {
+  filter: brightness(1);
+}
+
+/* =========================
+   INFO SECTION
+========================= */
+.booking-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  /* Clean vertical stack with specific gap */
+  gap: 19px; 
+}
+
+/* Typography Reset for tight stacking */
+.booking-info p {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.2 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.booking-container .court-price {
+  font-size: 18px;
+  color: var(--text-dim) !important;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px; /* Adds space before Date/Time */
+}
+
+/* "Booked By" Label */
+.booking-container .booking-info p:first-child {
+  font-size: 15px !important;
+  color: var(--text-dim);
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  margin-bottom: 4px !important;
+}
+
+/* Sport Name - The Focal Point */
+.sport-name {
+  font-size: 21px !important; /* Larger font size for impact */
+  font-weight: 800;
+  color: var(--accent-neon) !important; /* Neon Green Highlight */
+  letter-spacing: 1.2px;
+  margin-bottom: 8px !important;
+}
+
+/* Date and Time lines */
+.date, .time {
+  font-size: 17px;
+  color: var(--text-main) !important; /* Pure white for clarity */
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+/* =========================
+   RESPONSIVE (Mobile)
+========================= */
+@media (max-width: 800px) {
+  .booking-container {
+    flex-direction: column !important;
+    text-align: center;
+    padding: 30px 20px;
+    gap: 25px;
+  }
+  
+  .booking-image {
+    width: 100%;
+    height: 180px;
+  }
+
+  .booking-info {
+    align-items: center;
+  }
+}

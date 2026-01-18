@@ -1,0 +1,57 @@
+/* Custom Green Theme Variables */
+:root {
+  --accent-neon: #00ff87;   /* The signature neon green */
+  --text-main: #ffffff;     /* Bright white for titles */
+  --text-dim: #9ca3af;      /* Muted gray-green for subtitles */
+}
+
+/* =========================
+   COURTS GRID
+========================= */
+
+/* .manage-courts-container {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  display: grid;
+  Responsive sizing for court cards
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  row-gap: 50px;
+  margin-top: 50px;
+} */
+
+.manage-courts-container{
+   width: 100%;
+  max-width: 1400px;
+  display: grid;
+  /* Exactly 4 equal columns */
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 30px;
+  justify-items: center;
+  padding: 20px 0;
+}
+
+/* Smooth Fade Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .manage-courts-page h1 {
+    font-size: 32px;
+  }
+  .manage-courts-container {
+    width: 95%;
+    gap: 20px;
+  }
+}
