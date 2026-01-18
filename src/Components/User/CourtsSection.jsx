@@ -2,7 +2,7 @@ import CourtCard from "./CourtCard";
 import "./css/CourtsSection.css";
 import { useState, useEffect } from "react";
 import BookCourtModal from "./BookCourtModal";
-import api from "../../../api/axios";
+import api from "../../api/axios";
 import { useParams } from "react-router";
 function CourtsSection() {
   const { sportId } = useParams();

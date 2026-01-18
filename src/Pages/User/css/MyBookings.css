@@ -1,0 +1,60 @@
+/* Custom Green Theme Variables */
+:root {
+  --text-main: #ffffff;
+  --text-dim: #9ca3af;
+  --accent-neon: #00ff87;
+}
+
+/* =========================
+   PAGE WRAPPER
+========================= */
+.myBookings-page {
+  width: 100%;
+  min-height: 100vh;
+  /* Added extra top padding for the sticky navbar */
+  padding: 120px 0 80px; 
+  /* Removed the light background to let the App.css dark gradient show through */
+  background-color: transparent !important;
+  box-sizing: border-box;
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* =========================
+   PAGE TITLE (CENTERED)
+========================= */
+.myBookings-page h1 {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 50px;
+  color: var(--text-main) !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* =========================
+   SUBTITLE (ALIGNED WITH CARDS)
+========================= */
+.myBookings-page > p {
+  width: 90%;
+  max-width: 1000px;
+  /* Centering the container instead of fixed margin-left for better responsiveness */
+  margin: 0 auto 30px; 
+  
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--accent-neon) !important; /* Matches your action color */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   RESPONSIVE FIX
+========================= */
+@media (max-width: 1100px) {
+    .myBookings-page > p {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

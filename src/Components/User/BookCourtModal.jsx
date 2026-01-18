@@ -1,7 +1,7 @@
 import "./css/BookCourtModal.css";
 import { useState, useEffect } from "react";
-import api from "../../../api/axios";
-import sendBookingEmail from "../../../utils/sendBookingEmail";
+import api from "../../api/axios";
+import sendBookingEmail from "../../utils/sendBookingEmail";
 function BookCourtModal({ court, onClose }) {
   const storedUser = JSON.parse(localStorage.getItem("user"));
   const [timeSlots, setTimeSlots] = useState([]);
