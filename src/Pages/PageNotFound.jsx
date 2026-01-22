@@ -1,6 +1,6 @@
 function PageNotFound(){
     return(
-        <h1>Page Not found</h1>
+        <h1 style={{color: "white", textAlign: "center"}}>Page Not found</h1>
     )
 }
 

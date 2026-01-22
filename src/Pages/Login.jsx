@@ -23,7 +23,7 @@ function Login() {
         navigate("/home");
       }
     } catch (err) {
-      alert(err.response?.data?.error);
+      alert(err.response?.data?.message || "Login failed. Please try again.");
     }
   };
   return (

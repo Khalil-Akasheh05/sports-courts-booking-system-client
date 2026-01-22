@@ -21,7 +21,7 @@ function Signup() {
         localStorage.setItem("user", JSON.stringify(singupResponse.data))
         navigate("/home")
       } catch(err){
-        alert(err.response?.data?.error);
+        alert(err.response?.data?.message || "Signup failed. Please try again.");
       }
     }
   return (

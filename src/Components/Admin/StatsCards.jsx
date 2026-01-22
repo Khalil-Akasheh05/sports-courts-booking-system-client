@@ -19,7 +19,7 @@ function StatsCards() {
         ];
         setStats(formattedStats);
       } catch (err) {
-        alert(err.response?.data?.error);
+        alert(err.response?.data?.message || "Failed to load stats.");
       }
     };
     fetchStats();

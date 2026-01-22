@@ -12,7 +12,6 @@ function EditCourtModal({ court, onClose, onCourtUpdated }) {
         { price: Number(newPrice) },
         {
           headers: {
-            "Content-Type": "application/json",
             "x-role": storedUser.role,
           },
         }
@@ -21,7 +20,7 @@ function EditCourtModal({ court, onClose, onCourtUpdated }) {
       onClose();
       alert("Court updated successfully");
     } catch (err) {
-      alert(err.message?.data?.error);
+      alert(err.response?.data?.message || "Failed to update court. Please try again.");
     }
   };
 
@@ -32,7 +31,6 @@ function EditCourtModal({ court, onClose, onCourtUpdated }) {
         {},
         {
           headers: {
-            "Content-Type": "application/json",
             "x-role": storedUser.role,
           },
         }
@@ -41,7 +39,7 @@ function EditCourtModal({ court, onClose, onCourtUpdated }) {
       onClose();
       window.location.reload();
     } catch (err) {
-      alert(err.message?.data?.error);
+      alert(err.response?.data?.message || "Failed to disable court. Please try again.");
     }
   };
 
@@ -50,7 +48,6 @@ function EditCourtModal({ court, onClose, onCourtUpdated }) {
     await api.patch(`/admin/courts/${court.id}/enable`, {}, {
       headers:
       {
-      "Content-Type": "application/json",
       "x-role": storedUser.role,
       }
     })
@@ -58,7 +55,7 @@ function EditCourtModal({ court, onClose, onCourtUpdated }) {
     onClose();
     window.location.reload();
   } catch(err){
-    alert(err.message?.data?.error)
+    alert(err.response?.data?.message || "Failed to enable court. Please try again.")
   }
   }
   return (

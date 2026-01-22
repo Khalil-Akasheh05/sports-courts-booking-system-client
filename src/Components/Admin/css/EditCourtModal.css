@@ -182,6 +182,7 @@
 
 .price-field {
   position: relative;
+  width: 100% !important;
 }
 
 .price-input {

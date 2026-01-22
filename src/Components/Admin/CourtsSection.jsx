@@ -2,9 +2,10 @@ import CourtCard from "./CourtCard";
 import "./css/CourtsSection.css";
 import { useEffect, useState } from "react";
 import EditCourtModal from "./EditCourtModal";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import api from "../../api/axios";
 function CourtsSection() {
+  const navigate = useNavigate();
   const storedUser = JSON.parse(localStorage.getItem("user"));
   const { sportId } = useParams();
   const [selectedCourt, setSelectedCourt] = useState(null);
@@ -19,7 +20,10 @@ function CourtsSection() {
         });
         setCourts(fetchedCourts.data);
       } catch (err) {
-        alert(err.response?.data?.error);
+        alert(err.response?.data?.message || "Failed to load courts.");
+        if(err.response?.status===403){
+          navigate("/home");
+        }
       }
     };
     fetchCourts();
@@ -35,7 +39,7 @@ function CourtsSection() {
       setCourts((prev) => prev.filter((c) => c.id !== id));
       alert("Court deleted successfully")
     } catch (err) {
-      alert(err.message?.data?.error);
+      alert(err.response?.data?.message || "Failed to delete court. Please try again.");
     }
   };
   const handleCourtUpdated = (updatedCourt) => {

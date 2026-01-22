@@ -13,7 +13,7 @@ function MyBookingsSection() {
         const fetchedBookings = await api.get(`user/bookings/${storedUser.id}`);
         setBookings(fetchedBookings.data);
       } catch (err) {
-        alert(err.message?.data?.error);
+        alert(err.response?.data?.message || "Failed to load bookings.");
       }
     };
     fetchBookings();
@@ -24,7 +24,7 @@ function MyBookingsSection() {
       setBookings((prev) => prev.filter((b) => b.id !== id));
       alert("Booking successfully deleted");
     } catch (err) {
-      alert(err.message?.data?.error);
+      alert(err.response?.data?.message || "Failed to delete booking. Please try again.");
     }
   };
   const handleBookingUpdated = (updated) => {

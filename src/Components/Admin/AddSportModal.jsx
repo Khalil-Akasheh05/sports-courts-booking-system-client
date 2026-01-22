@@ -12,7 +12,6 @@ function AddSportModal({ onClose }) {
     try {
       await api.post("/admin/sports", newSport, {
         headers: {
-          "Content-Type": "application/json",
           "x-role": storedUser.role,
         },
       });
@@ -20,7 +19,7 @@ function AddSportModal({ onClose }) {
       alert("Sport added successfully");
       window.location.reload();
     } catch (err) {
-      alert(err.response?.data?.error);
+      alert(err.response?.data?.message || "Failed to add sport. Please try again.");
     }
   };
   return (

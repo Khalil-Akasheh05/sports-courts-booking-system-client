@@ -1,7 +1,9 @@
 import "./css/LatestBookings.css";
 import { useState, useEffect } from "react";
 import api from "../../api/axios";
+import { useNavigate } from "react-router";
 function LatestBookings() {
+  const navigate = useNavigate();
   const storedUser = JSON.parse(localStorage.getItem("user"));
   const [latestBookings, setLatestBookings] = useState([]);
   useEffect(() => {
@@ -14,7 +16,10 @@ function LatestBookings() {
         });
         setLatestBookings(bookings.data);
       } catch (err) {
-        alert(err.response?.data?.error);
+        alert(err.response?.data?.message || "Failed to load latest bookings.");
+        if(err.response?.status===403){
+          navigate("/home");
+        }
       }
     };
     fetchLatestBookings();

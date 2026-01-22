@@ -17,7 +17,6 @@ function AddCourtModal({id, onClose}) {
     try{
       await api.post(`/admin/courts/${resolvedSportId}`, newCourt, {
         headers: {
-          "Content-Type": "application/json",
           "x-role": storedUser.role,
         }
       })
@@ -25,7 +24,7 @@ function AddCourtModal({id, onClose}) {
       window.location.reload();
       alert("Court added successfully")
     } catch(err){
-      alert(err.response?.data?.error)
+      alert(err.response?.data?.message || "Failed to add court. Please try again.")
     }
   }
   return (
@@ -36,7 +35,7 @@ function AddCourtModal({id, onClose}) {
         <form onSubmit={handleAddNewCourt}>
           <div className="add-court-input-wrapper">
             <label htmlFor="">Court Number</label>
-            <input value={newCourt.number} onChange={(e)=>setNewCourt({...newCourt, number: Number(e.target.value)})} type="number" required/>
+            <input value={newCourt.number} onChange={(e)=>setNewCourt({...newCourt, number: Number(e.target.value)})} type="number" min={0} required/>
           </div>
           <div className="add-court-input-wrapper">
             <label htmlFor="">Court Type</label>

@@ -10,7 +10,7 @@ function SportsSection() {
         const fetchedSports = await api.get("/user/sports");
         setSports(fetchedSports.data);
       } catch (err) {
-        alert(err.message?.data?.error);
+        alert(err.response?.data?.message || "Failed to load sports.");
       }
     };
     fetchSports();

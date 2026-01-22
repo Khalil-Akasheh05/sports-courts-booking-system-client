@@ -20,6 +20,10 @@ main::before {
   background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
 }
 
+.input-wrapper{
+  align-items: flex-start !important;
+}
+
 /* #root {
   max-width: 1280px;
   margin: 0 auto;

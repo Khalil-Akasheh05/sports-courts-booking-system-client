@@ -1,5 +1,3 @@
-import { useState } from "react";
-import viteLogo from "/vite.svg";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
@@ -33,17 +31,14 @@ function AppContent() {
       {!hideLayout && storedUser.role === "admin" && <AdminNavBar />}
 
       <Routes>
-        {/* PUBLIC */}
         <Route path="/" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
 
-        {/* USER */}
         <Route path="/home" element={<Home />} />
         <Route path="/sports" element={<Sports />} />
         <Route path="/courts/:sportId" element={<Courts />} />
         <Route path="/myBookings" element={<MyBookings />} />
 
-        {/* ADMIN */}
         <Route path="/dashboard" element={<Dashbaord />} />
         <Route path="/manage-sports" element={<ManageSports />} />
         <Route path="/manage-courts/:sportId" element={<ManageCourts />} />

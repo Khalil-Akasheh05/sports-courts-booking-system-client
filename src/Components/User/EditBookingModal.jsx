@@ -13,7 +13,7 @@ function EditBookingModal({ booking, onClose, onUpdated }) {
         );
         setTimeSlots(fetchedTimeSlots.data);
       } catch (err) {
-        alert(err.message?.data?.error || "request failed");
+        alert(err.response?.data?.message || "Failed to load time slots.");
       }
     };
     fetchTimeSlots();
@@ -38,7 +38,7 @@ function EditBookingModal({ booking, onClose, onUpdated }) {
       alert("Booking updated successfully");
       onClose();
     } catch (err) {
-      alert(err.message?.data?.error);
+      alert(err.response?.data?.message || "Failed to edit booking. Please try again.");
     }
   };
   return (

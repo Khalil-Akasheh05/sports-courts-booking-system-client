@@ -22,7 +22,7 @@ function BookCourtModal({ court, onClose }) {
         );
         setTimeSlots(fetchedTimeSlots.data);
       } catch (err) {
-        alert(err.message?.data?.error);
+        alert(err.response?.data?.message || "Failed to load time slots.");
       }
     };
     fetchTimeSlots();
@@ -36,6 +36,7 @@ function BookCourtModal({ court, onClose }) {
         time_slot_id: booking.time_slot_id,
       });
       alert("Court booked successfully");
+      onClose();
       const courtResponse = await api.get(`/user/court/${court.id}`);
       const courtWithSport = courtResponse.data;
       const selectedSlot = timeSlots.find(
@@ -49,10 +50,8 @@ function BookCourtModal({ court, onClose }) {
         time: `${selectedSlot.start_time.slice(0, 5)} - ${selectedSlot.end_time.slice(0, 5)}`,
         to_email: storedUser.email,
       });
-      console.log("SPORT NAME:", courtWithSport.sport_name);
-      onClose();
     } catch (err) {
-      alert(err.message?.data?.error);
+      alert(err.response?.data?.message || "Failed to create booking. Please try again.");
     }
   };
   return (

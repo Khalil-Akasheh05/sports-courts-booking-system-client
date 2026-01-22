@@ -14,7 +14,7 @@ function CourtsSection() {
         const fetchedCourts = await api.get(`/user/courts/${sportId}`);
         setCourts(fetchedCourts.data);
       } catch (err) {
-        alert(err.message?.data?.error);
+        alert(err.response?.data?.message || "Failed to load courts.");
       }
     };
     fetchCourts();

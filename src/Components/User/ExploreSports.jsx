@@ -12,7 +12,7 @@ function ExploreSports() {
         const fetchedSports = await api.get("/user/explore-sports");
         setSports(fetchedSports.data);
       } catch (err) {
-        alert(err.response?.data?.message);
+        alert(err.response?.data?.message || "Failed to load sports.");
       }
     };
     fetchSports();
