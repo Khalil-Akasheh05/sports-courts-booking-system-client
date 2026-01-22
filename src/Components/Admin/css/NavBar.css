@@ -1,69 +1,82 @@
 /* Custom Dark Green Theme Variables */
 :root {
-  --bg-dark-green: #080c09;    /* Deep, moody green-black */
-  --accent-neon: #00ff87;      /* Clean green for active states/hover */
-  --text-gray: #b0b8b2;        /* Soft gray-green text */
+  --bg-dark-green: #080c09; /* Deep, moody green-black */
+  --accent-neon: #00ff87; /* Clean green for active states/hover */
+  --text-gray: #b0b8b2; /* Soft gray-green text */
 }
 
 /* Override Bootstrap's bg-dark with your custom Dark Green */
 .navbar.bg-dark {
-    background-color: var(--bg-dark-green) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 15px 0px !important;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+  background-color: var(--bg-dark-green) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 15px 0px !important;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 /* Container styling - Fixed to allow the "Push" effect */
 .navbar .container {
-    display: flex !important;
-    max-width: 100% !important;
-    padding: 0 60px !important;
-    margin: 0 !important;
+  display: flex !important;
+  max-width: 100% !important;
+  padding: 0 60px !important;
+  margin: 0 !important;
 }
 
 /* Navbar Brand (The Logo text) */
 .navbar-brand {
-    color: var(--accent-neon) !important;
-    font-weight: 700 !important;
-    font-size: 22px !important;
-    letter-spacing: 1px;
+  color: var(--accent-neon) !important;
+  font-weight: 700 !important;
+  font-size: 22px !important;
+  letter-spacing: 1px;
 }
 
 /* The Nav wrapper must take full width to push items */
 .me-auto {
-    display: flex !important;
-    width: 100% !important;
-    align-items: center;
+  display: flex !important;
+  width: 100% !important;
+  align-items: center;
 }
 
 /* Nav Links Styling */
 .navbar-nav .nav-link {
-    font-size: 18px !important;
-    padding: 10px 20px !important;
-    color: var(--text-gray) !important;
-    transition: all 0.3s ease-in-out;
+  font-size: 18px !important;
+  padding: 10px 20px !important;
+  color: var(--text-gray) !important;
+  transition: all 0.3s ease-in-out;
 }
 
 /* Hover Effect: Changes to your specific green */
 .navbar-nav .nav-link:hover {
-    color: var(--accent-neon) !important;
-    transform: translateY(-1px); /* Subtle lift animation */
+  color: var(--accent-neon) !important;
+  transform: translateY(-1px); /* Subtle lift animation */
 }
 
 /* THE FIX: Pushes the Logout link to the far right */
 .logout-link {
-    margin-left: auto !important;
+  margin-left: auto !important;
 }
 
 /* Special hover for Logout to make it feel like an exit */
 .logout-link:hover {
-    color: #ff4d4d !important; /* Optional: Stadium Red on hover */
+  color: #ff4d4d !important; /* Optional: Stadium Red on hover */
 }
 
 /* Active Link state */
 .navbar-nav .nav-link.active {
-    color: white !important;
-    font-weight: 500;
+  color: white !important;
+  font-weight: 500;
+}
+
+.navbar-logo {
+  height: 90px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 10px;
+
+  background: rgba(0, 0, 0, 0.35);
+  box-shadow: 0 0 12px rgba(0, 255, 150, 0.15);
 }
