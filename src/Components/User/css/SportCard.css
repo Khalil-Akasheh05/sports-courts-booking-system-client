@@ -54,7 +54,7 @@
   letter-spacing: 1px !important;
   cursor: pointer !important;
 
-  transition: all 0.3s ease !;
+  transition: all 0.3s ease !important;
 }
 
 .sport-card button:hover {
